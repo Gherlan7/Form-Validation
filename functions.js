@@ -3,7 +3,7 @@ var phoneError = document.getElementById("phone-error");
 var emailError = document.getElementById("email-error");
 var messageError = document.getElementById("message-error");
 var submitError = document.getElementById("submit-error");
-
+//We require a string of letters, then a space and then another string of letters for the name input
 function validateName() {
   var name = document.getElementById("contact-name").value;
   if (name.length == 0) {
@@ -17,6 +17,7 @@ function validateName() {
   nameError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
 }
+//For the phone, we need only digits, 10 digits
 function validatePhone() {
   var phone = document.getElementById("contact-phone").value;
   if (phone.length == 0) {
@@ -33,6 +34,8 @@ function validatePhone() {
   }
   phoneError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
+  //For the e-mail validation we need a string where we can have letters, digits, symbols etc, then a @ sign, then a string of letters or digits, 
+  // then a . and in the and we need a string of letters with a length of min 2, max 4
 }
 function validateEmail() {
   var email = document.getElementById("contact-email").value;
@@ -51,6 +54,7 @@ function validateEmail() {
 
   emailError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
+  //For the message validation we only need a length of 30 characters
 }
 function validateMessage() {
   var message = document.getElementById("contact-message").value;
@@ -63,7 +67,7 @@ function validateMessage() {
   messageError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
 }
-
+//If all the validation are ok, then the form can be validated
 function validateForm() {
   if (
     !validateName() ||
@@ -82,6 +86,7 @@ function validateForm() {
   popup.classList.add("open-popup");
   return true;
 }
+//This is for the pop-up message to show
 var popup = document.getElementById("popup");
 
 function openPopup() {
